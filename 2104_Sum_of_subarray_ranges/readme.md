@@ -2,9 +2,8 @@
 
 ## Intuition
 The range of a subarray is:
-'''
-Maximum Element − Minimum Element
-'''
+    Maximum Element − Minimum Element
+
 Instead of finding the maximum and minimum for every subarray (O(n²)), calculate the contribution of each element separately.
 
 For every element:
@@ -12,9 +11,8 @@ For every element:
 - Count how many subarrays it is the maximum of.
 - Count how many subarrays it is the minimum of.
 - Its total contribution becomes:
-'''
-(element × number of times it is maximum) − (element × number of times it is minimum)
-'''
+    (element × number of times it is maximum) − (element × number of times it is minimum)
+
 To count these subarrays efficiently, we use a Monotonic Stack to find the previous and next greater/smaller elements.
 
 ## Approach
@@ -32,16 +30,13 @@ To count these subarrays efficiently, we use a Monotonic Stack to find the previ
     - Number of valid ending positions.
 - Every combination of a valid start and end forms a subarray where the popped element is the maximum (or minimum).
 - Its contribution is:
-'''
-element × leftChoices × rightChoices
-'''
+    element × leftChoices × rightChoices
+
 - Compute:
     - Total contribution as maximum.
     - Total contribution as minimum.
 - Return:
-'''
-Maximum Contribution − Minimum Contribution
-'''
+    Maximum Contribution − Minimum Contribution
 
 ## Algorithm
 1. Initialize an empty monotonic stack.
@@ -55,13 +50,13 @@ Maximum Contribution − Minimum Contribution
         - left = index − previous
         - right = next − index
     - Add:
-        ''' element × left × right '''
+        element × left × right
     to the answer.
 4. Repeat separately for:
     - Maximum contribution.
     - Minimum contribution.
 5. Return:
-    ''' sumMaximums − sumMinimums '''
+    sumMaximums − sumMinimums
 
 ## Time Complexity
 ### O(n)
@@ -83,13 +78,11 @@ If an element has:
 - right possible ends
 
 then it contributes to exactly
-''' left × right '''
+    left × right
 subarrays.
 
 Therefore,
-''' Contribution = element × left × right '''
+    Contribution = element × left × right
 
 The final answer is:
-'''
-Σ(Maximum Contributions) − Σ(Minimum Contributions)
-'''
+    Σ(Maximum Contributions) − Σ(Minimum Contributions)

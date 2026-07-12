@@ -2,9 +2,8 @@
 
 ## Intuition
 For every subarray, the total strength is calculated as:
-''' 
-minimum element × sum of all elements in that subarray
-'''
+    minimum element × sum of all elements in that subarray
+
 Instead of iterating through every possible subarray (O(n²)), consider the contribution of each element individually.
 
 For every element:
@@ -35,9 +34,8 @@ The problem is therefore divided into three parts:
     - Compute the total contribution of all ending prefixes.
     - Compute the total contribution of all starting prefixes.
 - The total sum of all valid subarrays is:
-'''
-(rightPrefixSum × leftCount) − (leftPrefixSum × rightCount)
-'''
+    (rightPrefixSum × leftCount) − (leftPrefixSum × rightCount)
+
 - Multiply this value by the current minimum and add it to the answer.
 
 ## Algorithm
@@ -81,6 +79,4 @@ Use Prefix Sums to compute one subarray sum in O(1).
 Use Prefix of Prefix Sums to compute the sum of many subarray sums in O(1).
 
 The contribution of every minimum becomes:
-'''
-minimum × ((rightPrefixSum × leftCount) − (leftPrefixSum × rightCount))
-'''
+    minimum × ((rightPrefixSum × leftCount) − (leftPrefixSum × rightCount))
