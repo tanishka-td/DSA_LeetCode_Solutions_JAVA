@@ -84,11 +84,11 @@ The histogram height of each column equals the number of consecutive '1's ending
 Once the histogram is built, reuse the Largest Rectangle in Histogram algorithm to find the largest rectangle ending at that row.
 
 2D Matrix
-      ↓
+      ->
 Build Histogram
-      ↓
+      ->
 Apply Histogram Algorithm (84)
-      ↓
+      ->
 Repeat for every row
 
 ## Personal Note
