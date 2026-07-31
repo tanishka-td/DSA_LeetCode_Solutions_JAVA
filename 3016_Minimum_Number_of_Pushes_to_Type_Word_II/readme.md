@@ -52,11 +52,11 @@ Assign the most frequent letters to the cheapest key positions. Since there are 
 
 In short:
 
-Count frequencies
-        ↓
-Sort in decreasing order
-        ↓
-First 8 → ×1
-Next 8  → ×2
-Next 8  → ×3
-...
+    Count frequencies
+            ↓
+    Sort in decreasing order
+            ↓
+    First 8 → ×1
+    Next 8  → ×2
+    Next 8  → ×3
+    ...
